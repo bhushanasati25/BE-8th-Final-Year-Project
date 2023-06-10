@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+     <!-- Bootstrap CSS -->
+     
+</head>
+<body>
+    <div class="container">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Sentiment Analysis of Colleges and Univeristy</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#guide">Guide</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#faq">FAQ</a>
+              </li>
+              
+             
+          </div>
+        </div>
+      </nav>
+    <h1></h1>
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Sentiment Analysis of Colleges and University </h1>
+            <p class="col-lg-10 fs-4"></p>
+          </div>
+          <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="POST" action="/predict">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="text" id="text" placeholder="AIIMS">
+                <label for="text">College and Univeristy </label>
+                
+              </div>
+              
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+             
+            </form>
+          </div>
+        </div>
+      </div>
+    <div class="container mx-auto text-center">
+        
+        
+    
+       
+    {% if prediction %}
+    <h3><b>Sentiment Analysis Result For Your College and Univeristy</b> </h3>
+    <br></br>
+    <div class="container">
+    <div class="text-center mx-auto">
+    <table class="table">
+        <tr>
+            <th> Parameters </th>
+            <th>Score </th>
+        </tr>
+    <tr><td>Happiness</td>
+            <td> {{prediction[0]}}</td></tr>
+    <tr><td>Anger</td>
+            <td> {{prediction[1]}}</td></tr>
+    <tr><td>Fear</td>
+            <td> {{prediction[2]}}</td></tr>
+    <tr><td>Disguest</td>
+            <td> {{prediction[3]}}</td></tr>
+    <tr><td>Sadness</td>
+            <td> {{prediction[4]}}</td></tr>
+    <tr><td>The Model Score of KNN </td>
+            <td> {{prediction[5][0]}}</td></tr>
+    <tr><td>The Model Score of SVM </td>
+            <td> {{prediction[5][1]}}</td></tr>
+    <tr><td>The Model score of Navie Bayes </td>
+            <td> {{prediction[5][2]}}</td></tr>
+         
+    </table>
+</div></div>
+
+   
+
+
+   
+    {% endif %}
+</div>
+
+<!--<section id="scrapper">
+    <h2> Tweeter Data Scrapper</h2>
+    <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" method="POST" action="/scrape">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="text" placeholder="AIIMS">
+          <label for="text">College / Univeristy </label>
+        </div>
+          <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="path" placeholder="Path">
+          <label for="text">Path </label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="no_of_tweets" placeholder="no_of_tweets">
+          <label for="text">Number of Tweets  </label>
+          
+        </div>
+        
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Scrape</button>
+       
+      </form>
+
+      {% if scrape %}
+      <strong> You have Scrapped Twitter Data Successfully for {{ scrape }}.  </strong>
+      {% endif %}
+</section>-->
+<section id="about" >
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <br></br>  
+  <h2><b>Project Description</b></h2>
+  <br></br>
+    <p class="text-justify" >The goal of this project is to analyze the sentiment of social media data related to top colleges in the World. The project will involve collecting social media data from various platforms such as Twitter, Facebook, and Instagram, and using natural language processing (NLP) techniques to analyze the sentiment of the posts. The project will focus on analyzing the sentiment of posts related to the top colleges in the World, which will be determined based on rankings from publications such as News & World Report. The sentiment analysis will help identify the overall sentiment of the posts related to these colleges, and also help identify any specific issues or topics that are driving positive or negative sentiment. The automatic classification of text into positive, negative, or neutral sentiment using the technique of sentiment analysis has grown in popularity as a tool for studying social media data. In this study, we use information from social media sites to do a sentiment analysis of the top institutions in the United States. We want to find out how people feel about these institutions generally and determine any potential influencing variables.The world of social media is altering as a result of Web 2.0's introduction. Not only are people using social media to connect, exchange information, and express their personal opinions with others, but businesses can also utilize it to connect, understand, and enhance their goods and services.</p>
+</section>
+<section id="guide">
+  <br></br>
+    <h2><b>Guide</b></h2>
+    <br></br>
+    <div class="container">
+        <div class="row">
+          <div class="d-flex justify-content-center align-items-center" style="height:250px;">
+            <div class="col-6"><div class="card text-center mx-auto" style="width: 18rem;">
+              <img src="http://www.pdeacoem.org/images/demo/coem_prici.png" class="card-img-top" alt="R. V. Patil"  style="height:250px;"> 
+                <div class="card-body">
+                  
+
+                  <h5 class="card-title">Dr. R. V. Patil</h5>
+                  <p class="card-text">PDEA's COEM Principal & Guide </p>
+                  
+                </div>
+              </div></div>
+              <!--
+              <div class="col-6"><div class="card text-center mx-auto" style="width: 18rem;">
+                <img src="https://drive.google.com/uc?export=download&id=104AaTvAwBGUfyAhe48dvPb_T1vKAsjMN" class="card-img-top" alt="Madhuri Mam"  style="height:250px;">
+                <div class="card-body">
+                   
+
+                  <h5 class="card-title">Dr. M. P. Borawake</h5>
+                  <p class="card-text">HOD Computer Engineering Department</p>
+        
+                </div> 
+              
+              </div></div>
+              -->
+            </div>
+        </div>
+</section>
+<section id="team">
+  <br></br>
+    <h2><b>Team</b></h2>
+    <br></br>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"><div class="card" style="width: 18rem;">
+                <img src="https://media.licdn.com/dms/image/C5603AQHJjkJkNExVcQ/profile-displayphoto-shrink_800_800/0/1603413382141?e=2147483647&v=beta&t=igyQnoUOQh2H8XXdllfBhog9FW6RN4z_TMPY_6l46ZI" class="card-img-top" alt="Bhushan Asati"  style="height:250px;"> 
+                <div class="card-body">
+                  <h5 class="card-title">Bhushan Asati</h5>
+                  <p class="card-text">Data Scientist</p>
+                  
+                </div>
+              </div></div>
+              <div class="col-3"><div class="card" style="width: 18rem;">
+                <img src="https://drive.google.com/uc?export=download&id=18Q4RAofFaIKIhjNuQB8xrZ5GcdzQ7q_H" class="card-img-top" alt="Mayur Tembhare" style="height:250px;">
+                <div class="card-body">
+                  <h5 class="card-title">Mayur Tembhare</h5>
+                  <p class="card-text">Software Engineer</p>
+                  
+                </div>
+              </div></div>
+              <div class="col-3"><div class="card" style="width: 18rem;">
+                <img src="https://drive.google.com/uc?export=download&id=1uW1D7gQsrwtC1X99Z0NpqRDiXxsU1Mxq" class="card-img-top"  alt="Asha Mandale" style="height:250px;">
+                <div class="card-body">
+                  <h5 class="card-title">Asha Mandale</h5>
+                  <p class="card-text">Data Scientist</p>
+                  
+                </div>
+              </div></div>
+              <div class="col-3"><div class="card" style="width: 18rem;">
+                <img src="https://drive.google.com/uc?export=download&id=1AgBsvtQLGvCQthmbCwrTyp0tjomP1Y2A" class="card-img-top" alt="Ajesh Rathod" style="height:250px;">
+                <div class="card-body">
+                  <h5 class="card-title">Ajesh Rathod</h5>
+                  <p class="card-text">Software Engineer</p>
+                  
+                </div>
+              </div></div>
+            </div>
+        </div>
+</section>
+<section id="faq">
+  <br></br>
+    <h2><b>FAQ</b></h2>
+    <br></br>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                What is sentiment analysis?
+
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+               Sentiment analysis is the process of using natural language processing (NLP) techniques to extract subjective information from text, such as opinions, emotions, and attitudes.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                What are the applications of sentiment analysis?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                Sentiment analysis has many applications, such as social media monitoring, customer feedback analysis, brand reputation management, market research, and political polling.
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                How does sentiment analysis work?
+
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              Sentiment analysis typically involves preprocessing text data to remove noise, such as stop words and punctuation, and then using machine learning algorithms or rule-based systems to classify the sentiment of the text as positive, negative, or neutral.
+
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                What are some challenges in sentiment analysis?
+
+  
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Some challenges in sentiment analysis include identifying sarcasm and irony, dealing with ambiguous and context-dependent language, and handling multilingual data.
+              </div>
+            </div></div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    What are some popular tools and libraries for sentiment analysis?
+      
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    Some popular tools and libraries for sentiment analysis include NLTK, TextBlob, spaCy, VADER, and IBM Watson Natural Language Understanding.
+                  </div>
+                </div></div>
+      </div>
+    </section>
+
+    
+      
+      <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+          <p class="col-md-4 mb-0 text-body-secondary">&copy; 2023 Code Black</p>
+      
+          <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+          </a>
+      
+          <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link px-2 text-body-secondary">About</a></li>
+            <li class="nav-item"><a href="#guide" class="nav-link px-2 text-body-secondary">Guide</a></li>
+            <li class="nav-item"><a href="#team" class="nav-link px-2 text-body-secondary">Team</a></li>
+            <li class="nav-item"><a href="#faq" class="nav-link px-2 text-body-secondary">FAQ</a></li>
+          </ul>
+        </footer>
+      </div>
+      
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
